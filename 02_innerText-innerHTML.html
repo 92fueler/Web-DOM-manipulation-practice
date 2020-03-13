@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>innerText vs. innerHTML</title>
+    </head>
+    <body>
+        <div></div>
+        <p>
+            我是文字
+            <span>123</span>
+        </p>
+        <script>
+            var div = document.querySelector('div');
+
+            // 1. innerText 不识别HTML标签；不是标准；还会去处空格和换行
+            // div.innerText = '<strong>今天是：</strong> 2020';
+
+            // 2. innerHTML 识别HTML标签；是W3C标准；保留空格和换行
+            div.innerHTML = '<strong>今天是：</strong> 2020';
+
+            var p = document.querySelector('p');
+            console.log(p.innerText);
+            console.log(p.innerHTML);
+            
+
+        </script>
+    </body>
+</html>

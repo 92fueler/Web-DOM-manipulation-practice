@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<hmtl lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>DOM practice</title>
+        <style>
+            button {
+                width: 100px;
+                height: 20px;
+                margin-bottom: 20px;
+            }
+
+            img {
+                width: 300px;
+            }
+        </style>
+    </head>
+    <body>
+        <button id="btn1">Dr. Strange</button>
+        <button id="btn2">Thor</button> <br>
+        <img src="images/dr-strange.jpg" alt="Dr. strange" title="Dr. Strange">
+
+        <script>
+            //1. 获取事件源
+            var btn1 = document.getElementById('btn1');
+            var btn2 = document.getElementById('btn2');
+            var img = document.querySelector('img');
+
+            //2. 注册事件
+            var src = document.querySelector('src');
+            btn1.onclick = function() {
+                img.src = "images/dr-strange.jpg";
+                img.alt = "Dr. Strange";
+                img.title = "Dr. Strange"
+            }
+
+            btn2.onclick = function() {
+                img.src = "images/thor.jpg";
+                img.alt = "Thor";
+                img.title = "Thor";
+            }
+
+        </script>
+    </body>
+</hmtl>

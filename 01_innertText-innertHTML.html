@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<hmtl lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>DOM practice</title>
+        <style>
+            button {
+                width: 300px;
+                height: 100px;
+                font-size: 24px;
+            }
+
+            div,
+            p {
+                margin-top: 20px;
+                width: 300px;
+                height: 30px;
+                line-height: 30px;
+                font-size: 24px;
+                color: #fff;
+                background-color: pink;
+            }
+        </style>
+    </head>
+    <body>
+        <button>Display the system time</button>
+        <div>What is the time now?</div>
+        <p>1123</p>
+
+        <script>
+            //当我们点击按钮，div里面的文字就会发生变化
+
+            //1. 获取元素
+            var btn = document.querySelector('button');
+            var div = document.querySelector('div');
+
+            //2. 注册事件 
+            btn.onclick = function() {
+                div.innerText = getDate();
+                
+            }
+            
+            // 3. 事件程序处理 
+            function getDate() {
+                var date = new Date();
+                var year = date.getFullYear();
+                var month = date.getMonth() + 1;
+                var dates = date.getDate();
+                var arr = ['Sun', 'Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat'];
+                var day = date.getDay();
+                return 'Today is ' + year + '-' + month + '-' + dates + ',' +  arr[day];
+            }
+
+            //我们元素可以不用添加
+            var p = document.querySelector('p');
+            p.innerText = getDate();
+        </script>
+    </body>
+</hmtl>

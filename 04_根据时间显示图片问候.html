@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>分时显示不同图片 显示不同问候语</title>
+        <style>
+            img {
+                width: 300px;
+            }
+
+            h1 {
+                font-family: Arial;
+                font-size: 24px;
+                margin-top: 20px;
+            }
+        </style>
+    </head>
+
+    <!--
+        根据不同时间，页面显示不同图片，同时显示不同的问候语
+        如果上午时间打开页面，显示上午好，显示上午的图片
+        如果下午时间打开页面，显示下午好，显示下午的图片
+        如果晚上时间打开页面，显示晚上好，显示晚上的图片
+    -->
+    <!--
+        根据系统不同时间来判断，所以需要用到日期内置对象
+        利用多分支语句来设置不同的图片
+        需要一个图片，并且根据时间修改图片，就需要用到操作元素src属性
+        需要一个div元素，显示不同问候语，修改元素内容即可
+    -->
+    <body>
+        <img src="images/morning.jpg" alt="morning" title="Good Morning"> <br>
+        <div>
+            <h1></h1>
+        </div>
+        <script>
+            // 1. 获取事件源
+            var img = document.querySelector('img');
+            var heading = document.querySelector('h1');
+
+            // 2. 得到当前的小时数
+            var date = new Date();
+            var h = date.getHours();
+
+            // 3. 判断小时数改变图片和文字信息
+            if (h < 12) {
+                img.src = 'images/morning.jpg';
+                heading.innerHTML = 'Good morning, Jian Wu. Solve some algorithm problems.';
+            } else if (h < 18) {
+                img.src = 'images/afternoon.jpg';
+                heading.innerHTML = 'Good afternoon, Jian Wu. Keep working on the project.';
+            } else {
+                img.src = 'images/evening.jpg';
+                heading.innerText = 'Good evening, Jian Wu. Review the notes for today.';
+            }
+
+        </script>
+    </body>
+</html>
