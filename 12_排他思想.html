@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <style>
+
+        </style>
+
+        <body>
+            <button>Button1</button>
+            <button>Button2</button>
+            <button>Button3</button>
+            <button>Button4</button>
+            <button>Button5</button>
+
+            <script>
+                //btns是伪数组
+                var btns = document.querySelectorAll('button');
+                
+                for (let i = 0; i < btns.length; i++) {
+                    btns[i].onclick = function(){
+                        
+                        //1. 先把所有的按钮背景颜色去掉
+                        for (let i = 0; i < btns.length; i++) {
+                            btns[i].style.backgroundColor = '';
+                        }
+
+                        //2.　在更改当前按钮的颜色
+                        this.style.backgroundColor = 'pink';
+                    }
+                }
+            </script>
+        </body>
+    </head>
+</html>

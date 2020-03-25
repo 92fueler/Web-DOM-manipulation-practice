@@ -11,6 +11,7 @@
                 1. 首先精灵图图片排列有规律
                 2. 核心思路：利用for-loop，修改精灵图片的背景位置background-position
                 3. 剩下的就是考研你的数学功底了
+                ４．让虚幻
                 
             -->
         
@@ -18,6 +19,12 @@
             </div>
 
             <script>
+                //１．获取元素　所有li 
+                var lis = document.querySelectorAll('li');
+                for (var i = 0; i < lis.length; i++) {
+                    //让索引号乘以４４就是每个li的背景Ｙ坐标，index就是我们的Ｙ坐标
+                    lis[i].style.backgroundPosition = '0 -' + index + 'px';
+                }
 
             </script>
         </body>
