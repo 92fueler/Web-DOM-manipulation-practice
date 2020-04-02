@@ -4,12 +4,15 @@
         <meta charset="UTF-8">
         <style>
             body {
-                background: url(./image/b1.jpeg) no-repeat center top;
+                position: relative;
+                width: 1920px;
+                height: 1080px;
+                background: url(image/b1.jpeg) no-repeat center top;
             }
             .baidu {
                 position: absolute;
-                top: 30%;
-                left: 10%;
+                top: 30px;
+                left: 30px;
                 z-index: 999;
             }
             .baidu li {
@@ -18,16 +21,18 @@
             }
 
             img {
-                width: 200px;
+                width: 150px;
+                height: 100px;
             }
+            
         </style>
 
         <body>
             <ul class="baidu">
-                <li><img src="./image/b1.jpeg"></li>
-                <li><img src="./image/b2.jpeg"></li>
-                <li><img src="./image/b3.jpeg"></li>
-                <li><img src="./image/b4.jpeg"></li>
+                <li><img src="image/b1.jpeg"></li>
+                <li><img src="image/b2.jpeg"></li>
+                <li><img src="image/b3.jpeg"></li>
+                <li><img src="image/b4.jpeg"></li>
             </ul>
             <script>
                 //1.获取元素
