@@ -17,7 +17,6 @@
             }
 
             .box img {
-                width: 24px;
                 position: absolute;
                 top: 2px;
                 right: 2px;
@@ -41,7 +40,7 @@
             -->
 
             <div class="box">
-                <img src="images/close-eyes.png" alt="close" id="eye">
+                <img src="image/close_eyes.png" alt="close" id="eye">
                 <input type="password" name="password" id="pwd">
             </div>
 
@@ -56,11 +55,11 @@
                 eye.onclick = function(){
                     if (flag === 0) {
                         pwd.type = 'text';
-                        eye.src = "images/open_eyes.png";
+                        eye.src = "image/open_eyes.png";
                         flag = 1;
                     } else {
                         pwd.type = 'password';
-                        eye.src = "images/close-eyes.png";                      
+                        eye.src = "image/close_eyes.png";                      
                         flag = 0;
                     }
                 }

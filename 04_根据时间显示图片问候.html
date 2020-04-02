@@ -29,7 +29,7 @@
         需要一个div元素，显示不同问候语，修改元素内容即可
     -->
     <body>
-        <img src="images/morning.jpg" alt="morning" title="Good Morning"> <br>
+        <img src="image/morning.jfif" alt="morning" title="Good Morning"> <br>
         <div>
             <h1></h1>
         </div>
@@ -44,13 +44,13 @@
 
             // 3. 判断小时数改变图片和文字信息
             if (h < 12) {
-                img.src = 'images/morning.jpg';
+                img.src = 'image/morning.jfif';
                 heading.innerHTML = 'Good morning, Jian Wu. Solve some algorithm problems.';
             } else if (h < 18) {
-                img.src = 'images/afternoon.jpg';
+                img.src = 'image/afternoon.jfif';
                 heading.innerHTML = 'Good afternoon, Jian Wu. Keep working on the project.';
             } else {
-                img.src = 'images/evening.jpg';
+                img.src = 'image/evening.jfif';
                 heading.innerText = 'Good evening, Jian Wu. Review the notes for today.';
             }
 

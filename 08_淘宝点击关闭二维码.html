@@ -5,8 +5,8 @@
         <style>
             .box {
                 position: relative;
-                width: 74px; 
-                height: 88px;
+                width: 90px; 
+                height: 90px;
                 border: 1px solid #ccc;
                 margin: 100px auto;
                 font-size: 12px;
@@ -15,7 +15,7 @@
             }
             .box img {
                 width: 60px;
-                margin-top: 5px;
+                margin-top: 7px;
             }
             .close-btn {
                 position: absolute;
@@ -33,11 +33,13 @@
         <body>
         <!--淘宝点击关闭二维码
             当鼠标点击二维码关闭按钮的时候，则关闭整个二维码。
+            核心思路：利用样式的显示和隐藏完成，display: none隐藏元素；
+                      display: block显示元素
         -->
         
             <div class="box">
                 Taobao barcode 
-                <img src="images/barcode.png" alt="barcode">
+                <img src="image/barcode.jpg" alt="barcode">
                 <div class="close-btn">x</div>
             </div>
 
@@ -50,7 +52,6 @@
                 // 3. 处理程序
                 btn.onclick = function() {
                     box.style.display = 'none';
-
                 }
 
 
