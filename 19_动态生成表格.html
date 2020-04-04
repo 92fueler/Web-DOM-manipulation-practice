@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>动态生成表格</title>
+        <style>
+            table {
+                width: 500px;
+                margin: 100px auto;
+                border-collapse: collapse;
+                text-align: center;
+            }
+            td, 
+            th {
+                border: 1px solid #333;
+            }
+
+            thead tr {
+                height: 40px;
+                background-color: #ccc;
+            }
+        </style>
+    </head>
+        <body>
+            <table>
+                <thead>
+                    <tr>
+                        <th>姓名</th>
+                        <th>课程</th>
+                        <th>分数</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+
+            <script>
+                // 1. 创建学生数据
+                var datas = [
+                    {
+                        name: '胖胖',
+                        class: 'Java',
+                        score: '25'
+                    },
+                    {
+                        name: '猪十',
+                        class: 'Java',
+                        score: '59'
+                    },
+                    {
+                        name: '小阿鼻',
+                        class: 'Java',
+                        score: '100'
+                    }
+                ];
+
+                // 2. 创建行
+                // 3. 创建单元格
+                // 4. 单元格填充数据
+                // 5. 创建删除单元格
+                // 6. 添加删除操作
+
+                var tbody = document.querySelector('tbody');
+                for (let i = 0; i < datas.length; i++) {
+                    // 创建行
+                    var tr = document.createElement('tr');
+                    tbody.appendChild(tr);
+                    // 每一个tr都要创建若干td, 创建td的个数由datas[i]里的key决定
+                    for (let k in datas[i]) {
+                        var td = document.createElement('td');
+                        td.innerHTML = datas[i][k];
+                        tr.appendChild(td);
+                    }
+                    // 创建每行的最后一个删除单元格
+                    var td = document.createElement('td');
+                    td.innerHTML = "<a href='javascript:'>删除</a>";
+                    tr.appendChild(td);
+                }
+
+                // 删除操作
+                var as = document.querySelectorAll('a');
+                for (var i = 0; i < as.length; i++) {
+                    as[i].onclick = function() {
+                        tbody.removeChild(this.parentNode.parentNode);
+                    }
+                }
+
+            </script>
+        </body>
+    </head>
+</html>
+
+

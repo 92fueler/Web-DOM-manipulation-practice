@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>简单版发布留言板</title>
+        <style>
+            ul {
+                margin-top: 50px;
+            }
+
+            li { 
+                width: 300px;
+                padding: 5px;
+                background-color: pink;
+                color: red;
+                font-size: 14px;
+                margin: 15px 0;
+            }
+
+            li a {
+                float: right;
+            }
+        </style>
+    </head>
+
+
+        <body>
+            <textarea name="" id=""></textarea>
+            <button id="add">添加</button>
+            <button id="deletebtn">删除</button>
+
+            <ul>
+
+            </ul>
+
+            <script>
+                var text = document.querySelector('textarea');
+                var add = document.getElementById('add');
+                var deletebtn = document.getElementById('deletebtn');
+                var ul = document.querySelector('ul')
+
+                add.onclick = function() {
+                    if (text.value === '') {
+                        alert('请留言');
+                    } else {
+                        var lili = document.createElement('li');
+                        lili.innerHTML = text.value + "<a href='javascript:'>删除</a>";
+                        // ul.appendChild(li);
+                        ul.insertBefore(lili, ul.children[0]);
+                    }
+                    
+                };
+
+                deletebtn.onclick = function() {
+                    if (ul.children.length === 0) {
+                        alert('没有可删除的');
+                    } else {
+                        ul.removeChild(ul.children[0]);
+                    }
+                }
+
+
+
+            </script>
+        </body>
+    </head>
+</html>
+
